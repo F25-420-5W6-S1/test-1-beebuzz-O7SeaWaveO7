@@ -1,6 +1,8 @@
-﻿using Microsoft.AspNetCore.Identity;
+﻿using BeeBuzz.Data.Entities;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 
 namespace BeeBuzz.Data
 {
@@ -10,6 +12,10 @@ namespace BeeBuzz.Data
             : base(options)
         {
         }
+
+        public DbSet<beeHive> beeHives { get; set; }
+        public DbSet<Organization> organization { get; set; }
+        public DbSet<user> user { get; set; }
         
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
